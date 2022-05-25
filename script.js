@@ -2,7 +2,7 @@ var block = document.getElementById("block");
 var hole = document.getElementById("hole");
 var character = document.getElementById("character");
 var jumping = 0;
-var counter = 0;
+var counter = 20;
 
 hole.addEventListener('animationiteration', () => {
     var random = -((Math.random()*300)+150);
@@ -18,7 +18,7 @@ setInterval(function(){
     var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     var cTop = -(500-characterTop);
     if((characterTop>480)||((blockLeft<20)&&(blockLeft>-50)&&((cTop<holeTop)||(cTop>holeTop+130)))){
-        alert("Game over. Score: "+(counter+23));
+        alert("Game over. Score: "+(counter-1));
         character.style.top = 100 + "px";
         counter=0;
     }
